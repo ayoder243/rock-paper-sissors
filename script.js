@@ -62,38 +62,6 @@ function round (computer) {
 }
 
 function game() {
-  let playerScore = 0;
-  let computerScore = 0;
-  let tie = 0;
-  for (i = 0; i < 5; i++) {
-    switch (round(getComputerChoice())) {
-      case 0:
-        tie++
-        break
-      case 1:
-        playerScore++
-        break;
-      case 2:
-        computerScore++
-        break;
-      default: 
-        break;
-    }
-    console.log(`Player: ${playerScore}
-                Computer: ${computerScore}
-                Ties: ${tie}`)
-  }
-  console.log(`Player: ${playerScore}
-                Computer: ${computerScore}
-                Ties: ${tie}`)
-  if(playerScore > computerScore) {
-    console.log("You Win!!")
-  }
-  else if (playerScore < computerScore) {
-    console.log("You Lose!!")
-  }
-  else {
-    console.log("It's a tie!")
-  }
+  
 }
 game()
