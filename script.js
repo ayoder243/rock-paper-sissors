@@ -11,8 +11,8 @@ function getComputerChoice () {
   }
 }
 
-function round (computer) {
-  let player = prompt("Enter your choice: ").toLowerCase();
+function round (player) {
+  let computer = getComputerChoice();
   switch (computer) {
     case "Rock":
       switch (player) {
@@ -34,7 +34,7 @@ function round (computer) {
           console.log("You lose! Paper beats Rock")
           return 2;
         case "paper":
-          console.log("You tie! Rock and Rock.")
+          console.log("You tie! Paper and Paper.")
           return 0;
         case "sissors":
           console.log("You win! Sissors beat Paper")
@@ -51,7 +51,7 @@ function round (computer) {
           console.log("You Lose! Sissors beats Paper")
           return 2;
         case "sissors":
-          console.log("You tie! Rock and Rock.")
+          console.log("You tie! Sissors and Sissors.")
           return 0;
         default:
           console.log("bad logic")
@@ -65,8 +65,8 @@ function game() {
   const playerChoices = document.querySelectorAll("button");
 
   playerChoices.forEach((choice) => {
-    choice.addEventListener("click", (e) => {
-      console.log(choice.id)
+    choice.addEventListener("click", () => {
+      round(choice.id)
     })
   })
 }
