@@ -13,48 +13,50 @@ function getComputerChoice () {
 
 function round (player) {
   let computer = getComputerChoice();
+  let results = document.querySelector("#results");
+
   switch (computer) {
     case "Rock":
       switch (player) {
         case "rock":
-          console.log("You tie! Rock and Rock.")
+          results.textContent = "You tie! Rock and Rock."
           return 0;
         case "paper":
-          console.log("You win! Paper beats Rock")
+          results.textContent = "You win! Paper beats Rock"
           return 1;
         case "sissors":
-          console.log("You Lose! Rock beats Sissors")
+          results.textContent = "You Lose! Rock beats Sissors"
           return 2;
         default:
-          console.log("bad logic")
+          results.textContent = "bad logic"
       }
     case "Paper":
       switch (player) {
         case "rock":
-          console.log("You lose! Paper beats Rock")
+          results.textContent = "You lose! Paper beats Rock"
           return 2;
         case "paper":
-          console.log("You tie! Paper and Paper.")
+          results.textContent = "You tie! Paper and Paper."
           return 0;
         case "sissors":
-          console.log("You win! Sissors beat Paper")
+          results.textContent = "You win! Sissors beat Paper"
           return 1;
         default:
-          console.log("bad logic")
+          results.textContent = "bad logic"
       }
     case "Sissors":
       switch (player) {
         case "rock":
-          console.log("You win! Rock beats Sissors")
+          results.textContent = "You win! Rock beats Sissors"
           return 1;
         case "paper":
-          console.log("You Lose! Sissors beats Paper")
+          results.textContent = "You Lose! Sissors beats Paper"
           return 2;
         case "sissors":
-          console.log("You tie! Sissors and Sissors.")
+          results.textContent = "You tie! Sissors and Sissors."
           return 0;
         default:
-          console.log("bad logic")
+          results.textContent = "bad logic"
       }
     default:
       return "bad logic"
