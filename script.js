@@ -65,6 +65,7 @@ function round (player) {
 
 function game() {
   const playerChoices = document.querySelectorAll("button");
+  const winner = document.querySelector("#winner");
 
   let playerScore = 0;
   let computerScore = 0;
@@ -80,7 +81,13 @@ function game() {
         computerScore++;
       }
       score.textContent = `Your Score: ${playerScore}
-                           Computer Score: ${computerScore}`
+                           Computer Score: ${computerScore}`;
+      if (playerScore === 5) {
+        winner.textContent = "You win the game!"
+      }
+      else if (computerScore === 5) {
+        winner.textContent = "You lose the game!"
+      }
     })
   })
 }
