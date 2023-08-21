@@ -66,9 +66,21 @@ function round (player) {
 function game() {
   const playerChoices = document.querySelectorAll("button");
 
+  let playerScore = 0;
+  let computerScore = 0;
+
   playerChoices.forEach((choice) => {
     choice.addEventListener("click", () => {
-      round(choice.id)
+      let score = document.querySelector("#score");
+      let result = round(choice.id);
+      if (result === 1) {
+        playerScore++;
+      }
+      else if (result === 2) {
+        computerScore++;
+      }
+      score.textContent = `Your Score: ${playerScore}
+                           Computer Score: ${computerScore}`
     })
   })
 }
