@@ -62,6 +62,12 @@ function round (computer) {
 }
 
 function game() {
-  
+  const playerChoices = document.querySelectorAll("button");
+
+  playerChoices.forEach((choice) => {
+    choice.addEventListener("click", (e) => {
+      console.log(choice.id)
+    })
+  })
 }
 game()
